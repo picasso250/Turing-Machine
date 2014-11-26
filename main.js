@@ -62,7 +62,6 @@ $(function () {
 				for (var i = 0; i < mc.length; i++) {
 					var e = mc[i];
 					var isAny = e[1] === 'Any';
-					console.log(isAny);
 					var isStateMatch = e[0] === m;
 					if (isStateMatch && (e[1] === 'else' || e[1] === s || (isAny && s !== ''))) {
 						var trs = $('tbody tr');
