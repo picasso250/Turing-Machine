@@ -51,7 +51,6 @@ $(function () {
 		window.localStorage.setItem('mc', JSON.stringify(mc));
 		var iS = $('[name=state]');
 		var run = function () {
-			console.log(1);
 			var state = iS.val();
 			if (state === '') {
 				state = mc[0][0];
@@ -86,7 +85,6 @@ $(function () {
 					return;
 				}
 				var _do = function(ops) {
-					console.log(ops);
 					if (!ops || ops.length === 0) {
 						after();
 						return;
@@ -110,14 +108,14 @@ $(function () {
 					}
 					setTimeout(function () {
 						_do(_.rest(ops));
-					}, 500);
+					}, 200);
 				};
 				_do(ops);
 			}
 			var after = function() {
 				console.log('next state '+e[3]);
 				iS.val(e[3]);
-				setTimeout(run, 1000);
+				setTimeout(run, 500);
 			};
 			doOperation(after);
 		};
