@@ -1,12 +1,13 @@
 $(function () {
+	var w = 20;
 	$('#C').append(_.range(100).map(function(e){
-		return '<div class="ew" style="left:'+(e*31)+'px"><input id="I'+e+'" class="e" /></div>';
+		return '<div class="ew" style="left:'+(e*(w+1))+'px"><input id="I'+e+'" class="e" /></div>';
 	}));
 	var p = $('#PT');
 	var pos = 0;
 	var move = function(d) {
 		pos += d;
-		p.animate({left: (pos*31+12)+'px'}, 'fast');
+		p.animate({left: (pos*(w+1)+6)+'px'}, 'fast');
 		$('#I'+pos).focus();
 	}
 	$('.e,#S').on('keyup', function (e) {
@@ -48,21 +49,29 @@ $(function () {
 			});
 		});
 		window.localStorage.setItem('mc', JSON.stringify(mc));
-		console.log(mc);
+		var iS = $('[name=state]');
 		var run = function () {
 			console.log(1);
-			var iS = $('[name=state]');
 			var state = iS.val();
 			if (state === '') {
 				state = mc[0][0];
 				iS.val(state);
 			};
+			console.log('cur state '+state);
 			var getEntry = function(m, s) {
-				var r = mc.filter(function(e) {
-					return e[0] === m && (e[1] === s || (e[1] === 'Any' && s !== ''));
-				});
-				console.log(r);
-				return r ? r[0] : null;
+				for (var i = 0; i < mc.length; i++) {
+					var e = mc[i];
+					var isAny = e[1] === 'Any';
+					console.log(isAny);
+					var isStateMatch = e[0] === m;
+					if (isStateMatch && (e[1] === 'else' || e[1] === s || (isAny && s !== ''))) {
+						var trs = $('tbody tr');
+						trs.removeClass('ctr');
+						trs.eq(i).addClass('ctr');
+						return e;
+					}
+				};
+				return null;
 			};
 			var s = $('#I'+pos).val();
 			var e = getEntry(state, s);
@@ -107,6 +116,7 @@ $(function () {
 				_do(ops);
 			}
 			var after = function() {
+				console.log('next state '+e[3]);
 				iS.val(e[3]);
 				setTimeout(run, 1000);
 			};
