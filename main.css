@@ -1,0 +1,31 @@
+.e {
+	width: 30px;
+	text-align: center;
+	border: 0px solid;
+	border-right: 1px solid #777;
+}
+.ew {
+	position: absolute;
+}
+#P {
+	position: relative;
+	height: 10px;
+	margin-bottom: 2px;
+}
+#PT {
+	position: absolute;
+	background-color: red;
+	width: 10px;
+	height: 10px;
+	left: 12px;
+}
+#S {
+	margin-bottom: 30px;
+}
+#C {
+	border: 1px solid #777;
+	position: relative;
+	height: 19px;
+	width: 100%;
+	overflow: hidden;
+}
