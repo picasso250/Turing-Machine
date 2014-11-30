@@ -1,5 +1,5 @@
 .e {
-	width: 30px;
+	width: 20px;
 	text-align: center;
 	border: 0px solid;
 	border-right: 1px solid #777;
@@ -17,7 +17,7 @@
 	background-color: red;
 	width: 10px;
 	height: 10px;
-	left: 12px;
+	left: 6px;
 }
 #S {
 	margin-bottom: 30px;
@@ -28,4 +28,7 @@
 	height: 19px;
 	width: 100%;
 	overflow: hidden;
+}
+.ctr {
+	background-color: red;
 }
