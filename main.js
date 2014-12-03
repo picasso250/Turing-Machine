@@ -125,25 +125,20 @@ $(function () {
 		console.log(localStorage.getItem('mc'));
 	})
 
-	$('#xxx').click(function () {
+	$('#ExampleOne').click(function () {
 		var mc = [
 			['zero', '', 'P1,R', 'one'],
 			['one',  '', 'P0,R', 'zero'],
 		];
+		_.each(mc, function (e) {
+			appendRow(e[0], e[1], e[2], e[3]);
+		});
 	});
-	$('#xxx').click(function () {
-		var mc = [
-			['begin', '', 'P@,R,P@,R,P0,R,R,P1,R,R', 'next'],
-			['next',  '', 'P0,R,R,P1,L,L,L,L', 'mark-x'],
-			['x_one',  'x', 'E,R', 'x_one'],
-			['x_one',  '', 'P0,R,R,P1,L,L,L,L', 'mark-x'],
-			['next',  '', 'P0,R,R,P1,L,L,L,L', 'mark-x'],
-			['next',  '', 'P0,R,R,P1,L,L,L,L', 'mark-x'],
-			['next',  '', 'P0,R,R,P1,L,L,L,L', 'mark-x'],
-			['next',  '', 'P0,R,R,P1,L,L,L,L', 'mark-x'],
-			['next',  '', 'P0,R,R,P1,L,L,L,L', 'mark-x'],
-			['next',  '', 'P0,R,R,P1,L,L,L,L', 'mark-x'],
-		];
+	$('#ExampleTwo').click(function () {
+		var mc = [["begin","","P@,R,P@,R,P0,R,R,P1,R,R","next"],["next","","P0,R,R,P1,L,L,L,L","mark-x"],["x_one","x","E,R","x_one"],["x_one","","P1,L","back_x"],["x_one","else","R,R","x_one"],["back_x","","L,L","back_x"],["back_x","x","","x_one"],["back_x","@","R","for_next"],["for_next","","","next"],["for_next","else","R,R","for_next"],["mark-x","1","R,Px,L,L,L","mark-x"],["mark-x","0","R,R,R","x_one"]];
+		_.each(mc, function (e) {
+			appendRow(e[0], e[1], e[2], e[3]);
+		});
 	});
 });
 function removeRow(t)
