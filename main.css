@@ -30,5 +30,23 @@
 	overflow: hidden;
 }
 .ctr {
-	background-color: red;
+	background-color: rgb(190, 189, 189);
+}
+.btn {
+	border: 1px solid;
+	display: inline-block;
+	border-color: #535353;
+	border-radius: 3px;
+	padding: 4px;
+	margin: 4px;
+	padding-left: 10px;
+	padding-right: 10px;
+	cursor: pointer;
+}
+.btn:hover {
+	background-color: #bbb;
+}
+table {
+	border-collapse: collapse;
+	border: 1px solid #888;
 }
