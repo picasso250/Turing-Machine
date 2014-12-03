@@ -120,7 +120,31 @@ $(function () {
 			doOperation(after);
 		};
 		run();
+	});
+	$('#PrintJsonBtn').click(function() {
+		console.log(localStorage.getItem('mc'));
 	})
+
+	$('#xxx').click(function () {
+		var mc = [
+			['zero', '', 'P1,R', 'one'],
+			['one',  '', 'P0,R', 'zero'],
+		];
+	});
+	$('#xxx').click(function () {
+		var mc = [
+			['begin', '', 'P@,R,P@,R,P0,R,R,P1,R,R', 'next'],
+			['next',  '', 'P0,R,R,P1,L,L,L,L', 'mark-x'],
+			['x_one',  'x', 'E,R', 'x_one'],
+			['x_one',  '', 'P0,R,R,P1,L,L,L,L', 'mark-x'],
+			['next',  '', 'P0,R,R,P1,L,L,L,L', 'mark-x'],
+			['next',  '', 'P0,R,R,P1,L,L,L,L', 'mark-x'],
+			['next',  '', 'P0,R,R,P1,L,L,L,L', 'mark-x'],
+			['next',  '', 'P0,R,R,P1,L,L,L,L', 'mark-x'],
+			['next',  '', 'P0,R,R,P1,L,L,L,L', 'mark-x'],
+			['next',  '', 'P0,R,R,P1,L,L,L,L', 'mark-x'],
+		];
+	});
 });
 function removeRow(t)
 {
