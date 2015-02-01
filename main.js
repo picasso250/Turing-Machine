@@ -120,7 +120,10 @@ $(function () {
 			doOperation(after);
 		};
 		run();
-	})
+	});
+	$('#HideBtn').on('click', function () {
+		$('#ConfBody').toggle();
+	});
 });
 function removeRow(t)
 {

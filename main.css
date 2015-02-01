@@ -55,3 +55,18 @@ table {
 	border-collapse: collapse;
 	border: 1px solid #888;
 }
+#ConfTable {
+	clear: both;
+}
+#ConfTitle {
+	float: left;
+}
+#HideBtn {
+	float: left;
+	line-height: 61px;
+	margin-left: 33px;
+	cursor: pointer;
+}
+#ConfBody {
+	clear: both;
+}
