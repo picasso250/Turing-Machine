@@ -16,8 +16,10 @@
 <div id="P"><div id="PT"></div></div>
 <div id="C"></div>
 <div>
-	<h3>m-Configuration</h3>
-	<div>
+	<h3 id="ConfTitle">m-Configuration</h3>
+	<div id="HideBtn">hide/show description</div>
+	<span id="AddButton" class="btn">Add Row</span>
+	<div id="ConfBody">
 		<ul>
 			<li>m-Configuration is the state of machine.</li>
 			<li>Symbol is what the machine sees. It can be blank, or `any` which means any not blank Symbol or `else` which is always true.</li>
@@ -27,7 +29,7 @@
 			<li>Refresh page to recover from an error.</li>
 		</ul>
 	</div>
-	<table>
+	<table id="ConfTable">
 		<thead>
 			<tr>
 				<th>m-Configuration</th>
@@ -43,7 +45,6 @@
 	</table>
 
 	<div>
-		<span id="AddButton" class="btn">Add Row</span>
 	</div>
 	<div>
 		<span id="RunButton" class="btn">Run</span>

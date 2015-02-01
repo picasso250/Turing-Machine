@@ -2,10 +2,15 @@
 	width: 20px;
 	text-align: center;
 	border: 0px solid;
-	border-right: 1px solid #777;
 }
 .ew {
 	position: absolute;
+}
+.ew:nth-child(2n) input {
+	background-color: rgb(207, 221, 219);
+}
+.ew:nth-child(2n) {
+	background-color: rgb(207, 221, 219);
 }
 #P {
 	position: relative;
@@ -43,10 +48,48 @@
 	padding-right: 10px;
 	cursor: pointer;
 }
+.btn-small {
+	border: 1px solid;
+	display: inline-block;
+	border-color: #535353;
+	border-radius: 3px;
+	padding: 1px;
+	margin: 1px;
+	padding-left: 10px;
+	padding-right: 10px;
+	cursor: pointer;
+	font-size: small;
+}
+.btn-small:hover {
+	background-color: #DBD4D4;
+}
 .btn:hover {
-	background-color: #bbb;
+	background-color: #DBD4D4;
 }
 table {
 	border-collapse: collapse;
 	border: 1px solid #888;
+}
+tr:hover {
+	background-color: rgb(230, 230, 230);
+}
+#ConfTable {
+	clear: both;
+}
+#ConfTitle {
+	float: left;
+}
+#HideBtn {
+	float: left;
+	line-height: 61px;
+	margin-left: 33px;
+	cursor: pointer;
+}
+#AddButton {
+	float: left;
+	margin-left: 33px;
+	margin-top: 15px;
+}
+#ConfBody {
+	clear: both;
 }
