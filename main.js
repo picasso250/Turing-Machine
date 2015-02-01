@@ -21,19 +21,35 @@ $(function () {
 		};
 	});
 
-	var appendRow = function(m, s, o, fm) {
+	var addRowAfter = function () {
+		$(this).parents('tr').after(makeTr('','','',''));
+	};
+	var removeRow = function (t) {
+		$(this).parents('tr').remove();
+	};
+
+	var makeTr = function (m, s, o, fm) {
 		var t = (new Date()).valueOf();
 		var tds = [
 		'<td><input class="m" value="'+m+'"></td>',
 		'<td><input class="s" value="'+s+'"></td>',
 		'<td><input class="o" value="'+o+'"></td>',
 		'<td><input class="fm" value="'+fm+'"></td>',
-		'<td class="db" onclick="removeRow(\''+t+'\');">Delete</td>',
 		];
-		$('#TB').append('<tr id="TR'+t+'">'+tds.join('')+'</tr>');
-	}
+		var tr = $('<tr id="TR'+t+'">'+tds.join('')+'</tr>');
+		var td = $(
+		'<td class="db"></td>');
+		var delBtn = $('<span  class="btn-small">Del</span>').on('click', removeRow);
+		var addBtn = $('<span  class="btn-small">Add</span>').on('click', addRowAfter);
+		td.append(addBtn, ' / ', delBtn);
+		tr.append(td);
+		return tr;
+	};
+	var appendRow = function(m, s, o, fm) {
+		$('#TB').append(makeTr(m, s, o, fm));
+	};
 	$('#AddButton').click(function() {
-		appendRow('', '', '', '');
+		$('#TB').prepend(makeTr('', '', '', ''));
 	});
 	var mc = window.localStorage.getItem('mc');
 	if (mc) {
@@ -125,7 +141,4 @@ $(function () {
 		$('#ConfBody').toggle();
 	});
 });
-function removeRow(t)
-{
-	$('#TR'+t).remove();
-}
+
