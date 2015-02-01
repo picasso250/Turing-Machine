@@ -2,10 +2,15 @@
 	width: 20px;
 	text-align: center;
 	border: 0px solid;
-	border-right: 1px solid #777;
 }
 .ew {
 	position: absolute;
+}
+.ew:nth-child(2n) input {
+	background-color: rgb(207, 221, 219);
+}
+.ew:nth-child(2n) {
+	background-color: rgb(207, 221, 219);
 }
 #P {
 	position: relative;
